@@ -1,0 +1,3 @@
+project=woof
+test=rspec
+template=erb

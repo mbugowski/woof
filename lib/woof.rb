@@ -1,0 +1,2 @@
+module Woof
+end
