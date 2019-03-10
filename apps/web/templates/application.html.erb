@@ -3,8 +3,14 @@
   <head>
     <title><%= full_title(page_title) %></title>
     <%= favicon %>
+    <%= javascript 'jquery' %>
+    <%= stylesheet 'bootstrap', 'main' %>
+    <%= javascript 'bootstrap' %>
   </head>
   <body>
-    <%= yield %>
+    <%= render partial: 'shared/navbar' %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

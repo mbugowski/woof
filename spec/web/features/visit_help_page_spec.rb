@@ -2,7 +2,7 @@ require 'features_helper'
 
 RSpec.describe 'Visit Help page' do
   it 'is successful' do
-    visit '/help'
+    visit Web.routes.help
 
     expect(page).to have_css('h1', text: 'Help')
   end

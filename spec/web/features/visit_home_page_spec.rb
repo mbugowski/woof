@@ -2,7 +2,7 @@ require 'features_helper'
 
 RSpec.describe 'Visit Home page' do
   it 'is successful' do
-    visit '/'
+    visit Web.routes.root_path
 
     expect(page).to have_css('h1', text: 'Sample App')
   end

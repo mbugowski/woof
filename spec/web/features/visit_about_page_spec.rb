@@ -2,7 +2,7 @@ require 'features_helper'
 
 RSpec.describe 'Visit About page' do
   it 'is successful' do
-    visit '/about'
+    visit Web.routes.about_path
 
     expect(page).to have_css('h1', text: 'About')
   end
