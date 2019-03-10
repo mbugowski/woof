@@ -4,10 +4,6 @@ module Web
       class Index
         include Web::View
 
-
-        def page_title
-          "Home"
-        end
       end
     end
   end

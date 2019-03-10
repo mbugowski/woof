@@ -8,6 +8,6 @@ RSpec.describe 'Visit Home page' do
   end
 
   it 'has correct title' do
-    expect(page).to have_title "Home | Hanami Sample App"
+    expect(page).to have_title "Hanami Sample App"
   end
 end
