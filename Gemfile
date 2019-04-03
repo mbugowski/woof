@@ -1,28 +1,32 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'rake'
-gem 'hanami',       '~> 1.3'
-gem 'hanami-model', '~> 1.3'
+gem "hanami", "~> 1.3"
+gem "hanami-model", "~> 1.3"
+gem "rake"
 
-gem 'pg'
-gem 'hanami-bootstrap'
-gem 'jquery-hanami'
-gem 'sass'
+gem "hanami-bootstrap"
+gem "jquery-hanami"
+gem "pg"
+gem "sass"
+
+gem "bcrypt"
+gem "warden"
 
 group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
-  gem 'shotgun', platforms: :ruby
-  gem 'hanami-webconsole'
+  gem "hanami-webconsole"
+  gem "shotgun", platforms: :ruby
 end
 
 group :test, :development do
-  gem 'dotenv', '~> 2.4'
+  gem "dotenv", "~> 2.4"
+  gem 'pry', '~> 0.12.2'
 end
 
 group :test do
-  gem 'rspec'
-  gem 'capybara'
+  gem "capybara"
+  gem "rspec"
 end
 
 group :production do
