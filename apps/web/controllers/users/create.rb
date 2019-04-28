@@ -23,10 +23,10 @@ module Web
 
         def call(params)
           if params.valid?
-            @user = @interactor.call(params[:user])
+            @user = @interactor.call(params[:user]).user
             params.env["warden"].set_user(@user)
 
-            redirect_to routes.root_path
+            redirect_to routes.user_path(@user.id)
           else
             self.status = 422
           end

@@ -15,6 +15,10 @@ module Web
       def user_name
         @scope.local(:params).env["warden"].user&.name
       end
+
+      def current_user
+        @scope.local(:params).env["warden"].user
+      end
     end
   end
 end

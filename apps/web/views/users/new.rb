@@ -22,7 +22,7 @@ module Web::Views::Users
           password_field :password
         end
 
-        submit "Register"
+        submit "Register", class: "btn btn-primary"
       end
     end
 

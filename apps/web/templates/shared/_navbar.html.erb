@@ -8,7 +8,25 @@
       <li class="nav-item"><%= link_to "Home", routes.root_path, class: "nav-link" %></li>
       <li class="nav-item"><%= link_to "Help", routes.help_path, class: "nav-link" %></li>
       <li class="nav-item"><%= link_to "About", routes.about_path, class: "nav-link" %></li>
-      <li class="nav-item"><%= link_to "Log in",   '#', class: "nav-link" %></li>
+      <% if current_user %>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+            Account <b class="caret"></b>
+          </a>
+          <div class="dropdown-menu">
+            <%= link_to "Profile", routes.user_path(current_user.id) , class: "dropdown-item"%>
+            <%= link_to "Settings", '#', class: "dropdown-item" %>
+            <div class="divider"></div>
+            <%=
+              form_for :session, routes.session_path, method: :delete do
+                submit "Log out", class: "dropdown-item"
+              end
+            %>
+          </div>
+        </li>
+      <% else %>
+        <li><%= link_to "Log in", routes.new_session_path, class: "nav-link" %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
