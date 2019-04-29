@@ -9,4 +9,4 @@ get "/home", to: "home#index"
 get "/about", to: "about#index", as: :about
 
 resource :session, only: %i[new create destroy]
-resources :users, only: %i[new create show]
+resources :users, except: %i[destroy]
