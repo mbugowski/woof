@@ -12,6 +12,8 @@ gem "sass"
 gem "bcrypt"
 gem "warden"
 
+gem "pagy"
+
 group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading

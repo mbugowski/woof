@@ -1,6 +1,7 @@
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+$gray-lighter: #f8f8f8;
 
 @mixin box_sizing {
     -moz-box-sizing:    border-box;
@@ -112,3 +113,17 @@ input, textarea, select, .uneditable-input {
 input {
     height: auto !important;
 }
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
