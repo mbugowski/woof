@@ -1,4 +1,8 @@
 class UserRepository < Hanami::Repository
+  associations do
+    has_many :microposts
+  end
+
   def find_by_email(email)
     users.where(email: email).first
   end
@@ -14,5 +18,9 @@ class UserRepository < Hanami::Repository
 
   def page(offset, size)
     users.offset(offset).limit(size).to_a
+  end
+
+  def find_with_microposts(id)
+    aggregate(:microposts).where(id: id).as(User).one
   end
 end

@@ -1,0 +1,19 @@
+<ol class="microposts">
+  <% user.microposts.reverse.each do |micropost| %>
+    <li id="microposts-<%= micropost.id %>">
+      <%= link_to gravatar_for(user, size: 50), routes.user_path(micropost.user_id) %>
+      <span class="user"><%= link_to user.name, routes.user_path(micropost.user_id) %></span>
+      <span class="content"><%= micropost.content %></span>
+      <span class="timestamp">
+        Posted at <%= micropost.created_at %>.
+      </span>
+      <% if current_user == user %>
+        <%=
+          form_for :micropost, routes.micropost_path(micropost.id), method: :delete do
+            submit "Delete", class: "btn btn-link"
+          end
+        %>
+      <% end %>
+    </li>
+  <% end %>
+</ol>

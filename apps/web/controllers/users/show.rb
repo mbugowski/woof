@@ -8,7 +8,7 @@ module Web::Controllers::Users
     end
 
     def call(params)
-      @user = @repository.find(params[:id])
+      @user = @repository.find_with_microposts(params[:id])
       if @user.nil?
         status 404, "User not found"
       end

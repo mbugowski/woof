@@ -1,9 +1,9 @@
-require_relative "./auth"
+require_relative "../auth"
 
 module Web::Controllers::Users
   class Edit
     include Web::Action
-    include Web::Controllers::Users::Auth
+    include Web::Controllers::Auth
     expose :user
 
     def initialize(repository: UserRepository.new)
