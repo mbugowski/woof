@@ -9,5 +9,11 @@ get "/home", to: "home#index"
 get "/about", to: "about#index", as: :about
 
 resource :session, only: %i[new create destroy]
-resources :users
+resources :users do
+  member do
+    get :following
+    get :followers
+  end
+end
 resources :microposts, only: %i[create destroy]
+resources :relationships, only: %i[create destroy]

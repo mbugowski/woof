@@ -1,18 +1,2 @@
 <h1>All users</h1>
-<ul class="users">
-  <% users.each do |user| %>
-    <li>
-      <%= gravatar_for user %>
-      <%= link_to user.name, routes.user_path(user.id) %>
-      <% if current_user.admin && current_user != user %>
-        <%=
-          form_for :user, routes.user_path(user.id), method: :delete do
-            submit "Delete", class: "btn btn-link"
-          end
-        %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-<%= pagy_bootstrap_nav(pagy_data) %>
-<%= pagy_bootstrap_nav_js(pagy_data) %>
+<%= render partial: 'users' %>

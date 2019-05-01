@@ -1,0 +1,7 @@
+<%=
+  form_for :relationships, routes.relationship_path(1), method: :delete do
+    hidden_field :followed_id, value: user.id
+    hidden_field :follower_id, value: current_user.id
+    submit "Unfollow", class: "btn"
+  end
+%>
